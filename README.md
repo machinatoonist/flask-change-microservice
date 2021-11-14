@@ -150,15 +150,10 @@ curl http://127.0.0.1:8080/change/1/34
 ]
 
 Your Tasks
-Run the project locally by forking it and cloning your version.
-
-Invoke your new endpoint and verify it works.
-
-Create a Demo project in GitHub with a README.md that describes what you did.
-
-Create a Demo Video and reference it in your GitHub Project.
-
-(Optional) Share your portfolio project on Social Media with the hashtag: #duke-cloud-computing-for-data.
+* Run the project locally by forking it and cloning your version.
+* Invoke your new endpoint and verify it works.
+* Create a Demo project in GitHub with a README.md that describes what you did.
+* Create a Demo Video and reference it in your GitHub Project.
 
 To cleanup the deployment do the following: kubectl delete deployment hello-python
 
@@ -168,7 +163,6 @@ Azure Kubernetes deployment strategy
 Service Cluster Config YAML file
 
 Kubernetes.io Hello World
-
 
 ## Invoke Endpoint
 
