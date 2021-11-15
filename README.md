@@ -158,11 +158,11 @@ Your Tasks
 To cleanup the deployment do the following: kubectl delete deployment hello-python
 
 References
-Azure Kubernetes deployment strategy
+[Azure Kubernetes deployment strategy](https://azure.microsoft.com/en-us/overview/kubernetes-deployment-strategy/)
 
-Service Cluster Config YAML file
+[Service Cluster Config YAML file](https://kubernetes.io/docs/tasks/access-application-cluster/service-access-application-cluster/)
 
-Kubernetes.io Hello World
+[Kubernetes.io Hello World](https://kubernetes.io/blog/2019/07/23/get-started-with-kubernetes-using-python/)
 
 ## Invoke Endpoint
 
