@@ -9,37 +9,37 @@ Small Flask Microservice that makes change
 
 ## Instructions
 Deploy a Kubernetes Python Flask App
-In this project, your goal is to run a Kubernetes Flask Microservice that returns the correct amount of change locally on your desktop machine.  This project uses a simple Flask app that returns correct change as the base project and converts it to Kubernetes.
+In this project, your goal is to run a Kubernetes Flask Microservice that returns the correct amount of change locally on your desktop machine.  This project uses [a simple Flask app](https://github.com/noahgift/flask-change-microservice) that returns correct change as the base project and converts it to Kubernetes.
 
 
 Assets in Repo
-Makefile:  Builds project
+`Makefile`:  [Builds project](https://github.com/noahgift/kubernetes-hello-world-python-flask/blob/main/Makefile)
 
-Dockerfile:  Container configuration
+`Dockerfile`:  [Container configuration](https://github.com/noahgift/kubernetes-hello-world-python-flask/blob/main/Dockerfile)
 
-app.py:  Flask app
+`app.py`:  [Flask app](https://github.com/noahgift/kubernetes-hello-world-python-flask/blob/main/app.py)
 
-kube-hello-change.yaml: Kubernetes YAML Config
+`kube-hello-change.yaml`: [Kubernetes YAML Config](https://github.com/noahgift/kubernetes-hello-world-python-flask/blob/main/kube-hello-change.yaml)
 
 Get Started
-Create Python virtual environment python3 -m venv ~/.kube-hello && source ~/.kube-hello/bin/activate
+Create Python virtual environment `python3 -m venv ~/.kube-hello && source ~/.kube-hello/bin/activate`
 
-Run make all to install python libraries, lint project, including Dockerfile and run tests
+Run `make all` to install python libraries, lint project, including `Dockerfile` and run tests
 
 Build and Run Docker Container
-Install Docker Desktop
+[Install Docker Desktop](https://www.docker.com/products/docker-desktop)
 
 To build the image locally do the following.
 
-docker build -t flask-change:latest . or run make build which has the same command.
+`docker build -t flask-change:latest .` or run `make build` which has the same command.
 
-To verify container run docker image ls
+To verify container run `docker image ls`
 
-To run do the following:  docker run -p 8080:8080 flask-change or run make run which has the same command
+To run do the following:  `docker run -p 8080:8080 flask-change` or run `make run` which has the same command
 
-In a separate terminal invoke the web service via curl, or run make invoke which has the same command
+In a separate terminal invoke the web service via curl, or run `make invoke` which has the same command
 
-curl http://127.0.0.1:8080/change/1/34
+`curl http://127.0.0.1:8080/change/1/34
 
 [
   {
@@ -51,24 +51,24 @@ curl http://127.0.0.1:8080/change/1/34
   {
     "4": "pennies"
   }
-]
+]`
 
-Stop the running docker container by using control-c command
+Stop the running docker container by using `control-c` command
 
 Running Kubernetes Locally
 Verify Kubernetes is working via docker-desktop context
 
-(.kube-hello) ➜  kubernetes-hello-world-python-flask git:(main) kubectl get nodes
+`(.kube-hello) ➜  kubernetes-hello-world-python-flask git:(main) kubectl get nodes
 NAME             STATUS   ROLES    AGE   VERSION
-docker-desktop   Ready    master   30d   v1.19.3
+docker-desktop   Ready    master   30d   v1.19.3`
 
 Run the application in Kubernetes using the following command which tells Kubernetes to setup the load balanced service and run it:
 
-kubectl apply -f kube-hello-change.yaml or run make run-kube which has the same command
+`kubectl apply -f kube-hello-change.yaml` or run `make run-kube` which has the same command
 
 You can see from the config file that a load-balancer along with three nodes is the configured application.
 
-apiVersion: v1kind: Servicemetadata:
+`apiVersion: v1kind: Servicemetadata:
   name: hello-flask-change-servicespec:
   selector:
     app: hello-python
@@ -95,11 +95,11 @@ apiVersion: apps/v1kind: Deploymentmetadata:
         image: flask-change:latest
         imagePullPolicy: Never
         ports:
-        - containerPort: 8080
+        - containerPort: 8080`
 
 Verify the container is running
 
-kubectl get pods
+`kubectl get pods`
 
 Here is the output:
 
@@ -110,7 +110,7 @@ flask-change-7b7d7f467b-fpsxr   1/1     Running   0          6s
 
 Describe the load balanced service:
 
-kubectl describe services hello-python-service
+`kubectl describe services hello-python-service`
 
 You should see output similar to this:
 
@@ -134,7 +134,7 @@ Events:                   <none>
 
 Invoke the endpoint to curl it:
 
-make invoke
+`make invoke
 
 curl http://127.0.0.1:8080/change/1/34
 [
@@ -147,7 +147,7 @@ curl http://127.0.0.1:8080/change/1/34
   {
     "4": "pennies"
   }
-]
+]`
 
 Your Tasks
 * Run the project locally by forking it and cloning your version.
@@ -155,7 +155,7 @@ Your Tasks
 * Create a Demo project in GitHub with a README.md that describes what you did.
 * Create a Demo Video and reference it in your GitHub Project.
 
-To cleanup the deployment do the following: kubectl delete deployment hello-python
+To cleanup the deployment do the following: `kubectl delete deployment hello-python`
 
 References:
 
