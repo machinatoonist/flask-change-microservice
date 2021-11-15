@@ -134,10 +134,10 @@ Events:                   <none>
 
 Invoke the endpoint to curl it:
 
-`make invoke
+`make invoke``
 
-curl http://127.0.0.1:8080/change/1/34
-[
+`curl http://127.0.0.1:8080/change/1/34`
+`[
   {
     "5": "quarters"
   }, 
