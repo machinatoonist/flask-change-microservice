@@ -241,6 +241,28 @@ Result:
 ![Screen Shot 2021-03-16 at 3 02 35 PM](https://user-images.githubusercontent.com/58792/111367176-d7328600-866a-11eb-9856-928d42e65a9a.png)
 ![Screen Shot 2021-03-16 at 3 01 22 PM](https://user-images.githubusercontent.com/58792/111367178-d7cb1c80-866a-11eb-8c29-6440a6179544.png)
 
+## Create a Microservice
 
+Open a terminal in Visual Studio Code.
+
+cd into the projects directory:  `cd /home/coder/project`
+
+install virtualenv:  ``python3 -m pip install virtualenv`
+
+create a virtualenv: `/home/coder/.local/bin/virtualenv VENV`
+
+source the virtualenv (activate it):  `source VENV/bin/activate`
+
+cd into flask project:  `cd /home/coder/project/flask-change-microservice`
+
+install software:  `make install`
+
+run flask:  `python app.py`
+
+In the Browser Preview menu type in 127.0.0.1:5000/change/1/34 This will make a web request to your Microservice.  Try a few other combinations and notice how the URL parameters capture the input and then pass the input to a function.
+
+test app: `make test`
+
+fix test
 
 
